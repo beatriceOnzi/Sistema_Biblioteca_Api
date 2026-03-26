@@ -8,7 +8,7 @@ class Aluno(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String)
-    turma = db.Column(db.Integer)
+    turma = db.Column(db.String)
 
 
 class Livro(db.Model):
