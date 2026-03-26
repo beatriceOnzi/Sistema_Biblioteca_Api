@@ -1,48 +1,26 @@
-from flask import Flask, jsonify, render_template, request
-from flask_sqlalchemy import SQLAlchemy
-from model.database import Aluno, Livro, Emprestimo, ConfigTurma, db
-
-app = Flask(__name__)
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-db.init_app(app)
-
-with app.app_context():
-    db.create_all()
+from flask import Flask, render_template
+from config import Config
+from models import db
+from routes import registrar_routes
 
 
-@app.route('/')
-def index():
-    return render_template('home.html')
+def create_app():
+    app = Flask(__name__, instance_relative_config=True)
 
-@app.route('/api/alunos', methods=['GET'])
-def get_alunos():
-    alunos = Aluno.query.all()
-    print(alunos)
-    return jsonify([{'nome': t.nome, 'turma': t.turma} for t in alunos])
+    app.config.from_object(Config)
 
-'''Rotas:
-- @app.route('/home', methods=['GET']) -> Turmas botões
-- @app.route('/historico', methods=['GET']) -> Tabela do historico
-- @app.route('/historico/situacao/:id', methods=['GET']) -> Alterar a situação de devolvido 
+    db.init_app(app)
 
-- @app.route('/cadastro/aluno', methods=['GET']) -> Renderizar página
-- @app.route('/cadastro/aluno/novo', methods=['POST']) -> Cadastrar novo aluno
+    # registrar rotas
+    registrar_routes(app)
 
-- @app.route('/cadastro/livro', methods=['GET']) -> Renderizar página
-- @app.route('/cadastro/livro/novo', methods=['POST']) -> Cadastrar novo livro
+    with app.app_context():
+        db.create_all()
 
-- @app.route('/manual', methods=['GET']) -> Página do manual (static no js)
-
-- @app.route('/passagem_ano', methods=['POST']) -> Passagem de ano
-
-TURMAS:
-- @app.route('/turma/:ano', methods=['GET']) -> Mostrar a tabela e deixar colocar novos emprestimos
-- @app.route('/turma/:ano/salvar_dados', methods=['POST']) -> salva os dados no banco 
-'''
+    return app
 
 
-if __name__ == '__main__':
+app = create_app()
+
+if __name__ == "__main__":
     app.run(debug=True)
