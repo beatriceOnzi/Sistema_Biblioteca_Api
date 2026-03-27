@@ -1,3 +1,9 @@
+# services: 
+# - turma (pegar tudo? /registrar emprestimo / setupautocomplete etc)
+# - historico ( pegar tudo? / mudar situação / pesquisar)
+# - 
+# - outros: botoes-home / manual 
+
 from models import db, Emprestimo
 from datetime import date, timedelta
 

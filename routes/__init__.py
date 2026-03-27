@@ -1,3 +1,4 @@
+# executa quando a pasta é importada 
 from .alunos import bp as alunos_bp
 
 def registrar_routes(app):
