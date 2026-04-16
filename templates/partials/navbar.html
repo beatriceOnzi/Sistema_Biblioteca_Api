@@ -1,22 +1,23 @@
 <nav class="relative after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
-    <div class="flex items-center justify-center p-1 px-10 w-screen text-gray-300 bg-cnec-azul  bg-opacity-90 border-[0.3rem] border-cnec-azul/20">
+    <div class="flex items-center justify-center p-1 px-10 w-screen text-gray-300 bg-cnec-azul  bg-opacity-90 border-[0.3rem] border-cnec-azul/20 ">
 
-        <a href="" class="border-b-2 border-transparent  transition-colors duration-300 transform  hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 sm:mx-6 {% if page == 1  %} is_current_page {% endif %}">
+        <a href="" class="border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 {% if current_page == 1  %} is_current_page {% endif %}">
             TURMAS
         </a>
 
-        <a href="alunos/" class="border-b-2 border-transparent  transition-colors duration-300 transform  hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 sm:mx-6 {% if page == 2  %} is_current_page {% endif %}">
-            HISTÓRICO
-        
-        <a href="#" class="border-b-2 border-transparent transition-colors duration-300 transform hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 sm:mx-6 {% if page == 3  %} is_current_page {% endif %}">
+        <a href="alunos/" class="border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 {% if current_page == 2  %} is_current_page {% endif %}">
             CADASTRO
         </a>
+        
+        <a href="historico/" class="border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 {% if current_page == 3  %} is_current_page {% endif %}">
+            HISTÓRICO
+        </a>
             
-        <a href="#" class="border-b-2 border-transparent transition-colors duration-300 transform hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 sm:mx-6 {% if page == 4  %} is_current_page {% endif %}">
+        <a href="manualInstrucoes/" class="border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 {% if current_page == 4  %} is_current_page {% endif %}">
             MANUAL DE INSTRUÇÕES
         </a>
 
-        <a href="#" class="border-b-2 border-transparent transition-colors duration-300 transform hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 sm:mx-6 {% if page == 5  %} is_current_page {% endif %}">
+        <a href="passagemAno/" class="border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold mx-1.5 {% if current_page == 5  %} is_current_page {% endif %}">
             PASSAGEM DE ANO
         </a>
 
