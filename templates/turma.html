@@ -4,11 +4,13 @@
 
 {% block content %}
     <h1 class="text-3xl font-bold text-cnec-azul-escuro">
-    Turmas
+    Turma {{turma}}º Ano
     </h1>
     <div>
-        {% for turma in turmas %} 
-            <a href="/turma/{{turma.id}}" class="text-cnec-azul">{{ turma.turma }}</a>
+        {% for aluno in alunos_turma %}
+            <ul>
+                <li class="text-cnec-azul">{{aluno.nome}} - {{aluno.turma}}</li>
+            </ul> 
         {% endfor %}
 
     </div>

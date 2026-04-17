@@ -1,14 +1,3 @@
-3. Como colocar para funcionar
-Abra o terminal na pasta projeto_estudo.
-
-Instale as dependências executando: pip install -r requirements.txt
-
-Rode o servidor executando: python app.py
-
-Abra o seu navegador e acesse: http://127.0.0.1:5000
-
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAA 
-
 Services:
 # services: 
 # - turma (pegar tudo? /registrar emprestimo / setupautocomplete etc)

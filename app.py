@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from config import Config
-from models import db
+from models import db, Aluno
 from routes import registrar_routes
 
 
@@ -11,14 +11,12 @@ def create_app():
 
     db.init_app(app)
 
-    # registrar rotas
     registrar_routes(app)
 
     with app.app_context():
         db.create_all()
 
     return app
-
 
 app = create_app()
 

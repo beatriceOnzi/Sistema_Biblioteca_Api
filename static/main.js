@@ -1,4 +1,4 @@
-// Assim que a página carrega, ele chama a função para buscar as tarefas
+// Esse arquivo vai pro pau 
 document.addEventListener('DOMContentLoaded', carregarTarefas), () => {
     
     var table = new Tabulator("#tabela", {
