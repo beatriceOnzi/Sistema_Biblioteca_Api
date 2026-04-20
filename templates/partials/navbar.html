@@ -1,23 +1,23 @@
 <nav class="relative">
-    <div class="flex items-center justify-center p-1 px-10 w-full text-gray-300 bg-cnec-azul  bg-opacity-90 border-[0.3rem] border-cnec-azul/20 shadow-lg shadow-cnec-azul-claro ">
+    <div class="flex items-center gap-x-12 justify-between p-1 ps-12 pe-5 w-full text-gray-300 bg-cnec-azul  bg-opacity-90 border-[0.3rem] border-cnec-azul/20 shadow-lg shadow-cnec-azul-claro ">
 
-        <a href="/" class="mx-4 border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 1  %} is_current_page {% endif %}">
+        <a href="/" class=" border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 1  %} is_current_page {% endif %}">
             TURMAS
         </a>
 
-        <a href="/cadastro/alunos/" class="mx-4 border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 2  %} is_current_page {% endif %}">
+        <a href="/cadastro/alunos/" class=" border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 2  %} is_current_page {% endif %}">
             CADASTRO
         </a>
         
-        <a href="/historico/" class="mx-4 border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 3  %} is_current_page {% endif %}">
+        <a href="/historico/" class=" border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 3  %} is_current_page {% endif %}">
             HISTÓRICO
         </a>
             
-        <a href="/manualInstrucoes/" class="mx-4 border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 4  %} is_current_page {% endif %}">
+        <a href="/manualInstrucoes/" class=" border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 4  %} is_current_page {% endif %}">
             MANUAL DE INSTRUÇÕES
         </a>
 
-        <a href="/passagemAno/" class="mx-4 border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 5  %} is_current_page {% endif %}">
+        <a href="/passagemAno/" class=" border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 5  %} is_current_page {% endif %}">
             PASSAGEM DE ANO
         </a>
 
@@ -27,3 +27,32 @@
 
     </div>
 </nav>
+
+<!--    
+<nav class="bg-cnec-azul text-white p-4">
+
+  <div class="flex items-center justify-between">
+    <span class="font-bold">LOGO</span>
+
+botão mobile 
+    <button id="menu-btn" class="sm:hidden text-2xl">
+      ☰
+    </button>
+
+    menu desktop 
+    <div class="max-sm:hidden flex gap-6">
+      <a href="#">Turmas</a>
+      <a href="#">Cadastro</a>
+      <a href="#">Histórico</a>
+    </div>
+  </div>
+
+   menu mobile
+  <div id="menu"
+       class="hidden flex-col gap-4 mt-4 sm:hidden">
+    <a href="#">Turmas</a>
+    <a href="#">Cadastro</a>
+    <a href="#">Histórico</a>
+  </div>
+
+</nav> -->

@@ -1,21 +1,28 @@
 // Esse arquivo vai pro pau 
-document.addEventListener('DOMContentLoaded', carregarTarefas), () => {
+// Não foi pro pau, se escapou hoje
+
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+
+btn.addEventListener("click", () => {
+menu.classList.toggle("hidden");
+});
+
+// document.addEventListener('DOMContentLoaded', carregarTarefas), () => {
     
-    var table = new Tabulator("#tabela", {
-        layout: "fitColumns",
-        columns: [
-            {title: "ID", field: "id"},
-            {title: "Nome", field: "nome"},
-            {title: "Turma", field: "turma"}
-        ]
-    });
+//     var table = new Tabulator("#tabela", {
+//         layout: "fitColumns",
+//         columns: [
+//             {title: "ID", field: "id"},
+//             {title: "Nome", field: "nome"},
+//             {title: "Turma", field: "turma"}
+//         ]
+//     });
 
-    fetch("/api/alunos")
-    .then(res => res.json())
-    .then(data => table.setData(data))
-}
-
-
+//     fetch("/api/alunos")
+//     .then(res => res.json())
+//     .then(data => table.setData(data))
+// }
 // function carregarTarefas() {
 //     // Comunicação: JS pede as informações para a rota GET do Flask
 //     fetch('/api/tarefas')
