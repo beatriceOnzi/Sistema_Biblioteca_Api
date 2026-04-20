@@ -7,7 +7,7 @@ bp = Blueprint("turma", __name__, url_prefix="/turma")
 # quando está em certos lugares: ex -> quando entrou dentro de uma turma ( para sair vai ter um botão de voltar e um de salvar)
 # ouuuuu se não der para fazer isso, vai ser redirecionada, mas não vai salvar. Acho que não dá pau não.
 
-@bp.route('/<id>')
-def load_turma(id):
-    alunos_turma = turma_service.get_alunos_turma(id)
-    return render_template('turma.html', current_page = 1, alunos_turma = alunos_turma, turma = id)
+@bp.route('/<turma>')
+def load_turma(turma):
+    alunos_turma = turma_service.get_alunos_turma(turma)
+    return render_template('turma.html', current_page = 1, alunos_turma = alunos_turma, turma = turma)

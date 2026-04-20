@@ -1,5 +1,5 @@
-from models import db, ConfigTurmas
+from models import db, Turmas
 
 def get_turmas():
-    turmas = ConfigTurmas.query.all()
+    turmas = Turmas.query.all()
     return turmas
