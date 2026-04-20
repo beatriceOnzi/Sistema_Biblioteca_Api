@@ -1,5 +1,5 @@
-from models import db, Turmas
+from models import db, Turma
 
 def get_turmas():
-    turmas = Turmas.query.all()
+    turmas = Turma.query.all()
     return turmas

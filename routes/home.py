@@ -1,5 +1,4 @@
 from flask import Blueprint, jsonify, render_template, request
-# from models.aluno import Aluno, db
 import services.home_service as home_service
 import adicionar_dados as adicionar_dados
 

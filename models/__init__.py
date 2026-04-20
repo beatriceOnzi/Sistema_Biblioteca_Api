@@ -5,4 +5,4 @@ db = SQLAlchemy()
 from .aluno import Aluno
 from .livro import Livro
 from .emprestimo import Emprestimo
-from .turmas import Turmas
+from .turma import Turma
