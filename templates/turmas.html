@@ -3,13 +3,16 @@
 {% block title %}Biblioteca CNEC{% endblock %}
 
 {% block content %}
-    <h1 class="text-3xl font-bold text-cnec-azul-escuro">
-    Turmas
-    </h1>
-    <div>
-        {% for turma in turmas %} 
-            <a href="/turma/{{turma.turma}}" class="text-cnec-azul">{{ turma.turma_formatada }}</a>
-        {% endfor %}
-
+    <div class="flex flex-col items-center justify-center h-full w-full bg-cnec-azul-escuro">
+        <div class="justify-start">
+            <div class="rounded-t-md p-2 px-4 bg-cnec-azul text-cnec-branco font-bold w-max">
+                SELECIONE A TURMA
+            </div>
+            <div class="grid grid-flow-col grid-rows-3 rounded-md rounded-tl-none gap-5 bg-cnec-azul h-max w-max p-14">
+                {% for turma in turmas %} 
+                    <a href="/turma/{{turma.turma}}" class="text-cnec-azul-escuro bg-cnec-amarelo rounded-md p-2 ">{{ turma.turma_formatada }}</a>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}

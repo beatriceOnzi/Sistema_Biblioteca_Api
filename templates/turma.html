@@ -7,12 +7,13 @@
     Turma {{turma}}º Ano
     </h1>
     <div>
-        {% for aluno in alunos_turma %}
-            <ul>
-                <li class="text-cnec-azul">{{aluno.nome}} - {{aluno.turma}}º Ano</li>
-            </ul> 
-        {% endfor %}
-
+        <ul>
+            {% for aluno in alunos_turma %}
+                <li class="text-cnec-azul">
+                    {{aluno.nome}} - {{aluno.turma}}º Ano
+                </li>
+            {% endfor %}
+        </ul> 
     </div>
 
 {% endblock %}

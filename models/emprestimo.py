@@ -11,3 +11,5 @@ class Emprestimo(db.Model):
     data_emprestimo = db.Column(db.Date, default=func.current_date())
     data_devolucao_prevista = db.Column(db.Date)
     data_devolucao = db.Column(db.Date)
+
+    turma = db.Column(db.Integer)

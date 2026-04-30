@@ -1,4 +1,4 @@
-from models import db, Aluno, Turma
+from models import db, Aluno, Turma, Livro
 
 def get_alunos():
     alunos = Aluno.query.all()
@@ -24,6 +24,19 @@ def add_alunos():
 
     db.session.commit()
     print("aluno adicionados")
+
+
+def add_livros():
+    novo_aluno = Livro(nome="Livro 1")
+    db.session.add(novo_aluno)
+    novo_aluno = Livro(nome="Livro 2")
+    db.session.add(novo_aluno)
+    novo_aluno = Livro(nome="Livro 3")
+    db.session.add(novo_aluno)
+
+    db.session.commit()
+    print("aluno adicionados")
+
 
 def add_turmas():
     nova_turma = Turma(turma=1, turma_formatada = "1º Ano")

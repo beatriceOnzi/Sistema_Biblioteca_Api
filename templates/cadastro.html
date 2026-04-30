@@ -13,8 +13,46 @@ Cadastrar
         <a href="/cadastro/livros">Livros</a>
     </div>
     <div>
-        <form action="/cadastro/{{grupo}}/novo">
-            <label>Lalalal...</label>
+        <form action="/cadastro/{{ grupo }}/novo">
+            {% if grupo == "alunos" %}
+                <ul>
+                    {% for aluno in alunos %}
+                        <li class="text-cnec-azul">
+                            {{aluno.nome}} - {{aluno.turma}}º Ano
+                        </li>
+                    {% endfor %}
+                </ul> 
+                <label>
+                    Nome:
+                    <input type="text">
+                </label>
+                <label>
+                    Turma:
+                    <select>
+                        <option value="1">1º Ano</option>
+                        <option value="2">2º Ano</option>
+                        <option value="3">3º Ano</option>
+                        <option value="4">4º Ano</option>
+                        <option value="5">5º Ano</option>
+                        <option value="6">6º Ano</option>
+                        <option value="7">7º Ano</option>
+                        <option value="8">8º Ano</option>
+                        <option value="9">9º Ano</option>
+                    </select>
+                </label>
+
+            {% endif %}
+
+            {% if grupo == "livros" %}
+                <ul>
+                    {% for livro in livros %}
+                        <li class="text-cnec-azul">
+                            {{livro.nome}}
+                        </li>
+                    {% endfor %}
+                </ul> 
+            {% endif %}
+                <input type="submit"/>
         </form>
     </div>
 </div>

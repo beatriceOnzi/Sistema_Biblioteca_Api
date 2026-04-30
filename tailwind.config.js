@@ -8,7 +8,7 @@ module.exports = {
         cnec:{
           amarelo: '#ffd32b',
           azul: {
-            DEFAULT: '#003c9d',
+            DEFAULT: '#003C9D',
             claro: '#7c89c2',
             escuro: "#0e1133"
           },
