@@ -5,22 +5,17 @@ def get_alunos():
     return alunos
 
 def add_alunos():
-    novo_aluno = Aluno(nome="Beatrice1ano", turma=1)
+    novo_aluno = Aluno(nome="Carlo", turma=1)
     db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Murilo1ano", turma=1)
+    novo_aluno = Aluno(nome="Amanada", turma=1)
     db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Beatrice2ano", turma=2)
+    novo_aluno = Aluno(nome="Ana", turma=1)
     db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Beatrice4ano", turma=4)
+    novo_aluno = Aluno(nome="Rafaela", turma=1)
     db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Beatrice4ano", turma=4)
+    novo_aluno = Aluno(nome="Bruna", turma=1)
     db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Beatrice9ano", turma=9)
-    db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Murilo9ano", turma=9)
-    db.session.add(novo_aluno)
-    novo_aluno = Aluno(nome="Beatrice3ano", turma=3)
-    db.session.add(novo_aluno)
+    novo_aluno = Aluno(nome="Sofia", turma=1)
 
     db.session.commit()
     print("aluno adicionados")

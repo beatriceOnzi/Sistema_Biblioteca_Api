@@ -1,12 +1,13 @@
-// Esse arquivo vai pro pau 
-// Não foi pro pau, se escapou hoje
+// const { response } = require("express");
 
-const btn = document.getElementById("menu-btn");
-const menu = document.getElementById("menu");
+// const btn = document.getElementById("menu-btn");
+// const menu = document.getElementById("menu");
 
-btn.addEventListener("click", () => {
-menu.classList.toggle("hidden");
-});
+// btn.addEventListener("click", () => {
+// menu.classList.toggle("hidden");
+// });
+
+
 
 // document.addEventListener('DOMContentLoaded', carregarTarefas), () => {
     

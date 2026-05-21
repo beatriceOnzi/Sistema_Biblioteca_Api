@@ -7,6 +7,14 @@ emprestimos já escritos.
 
 
 
+.gradient-style-1 {
+    background: #17409a;
+    background: -moz-radial-gradient(center,ellipse cover,#17409a 0,#0c2a68 100%);
+    background: -webkit-radial-gradient(center,ellipse cover,#17409a 0,#0c2a68 100%);
+    background: radial-gradient(ellipse at center,#17409a 0,#0c2a68 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#17409a', endColorstr='#0c2a68', GradientType=1)
+}
+
 Rotas:
 - @app.route('/home', methods=['GET']) -> Turmas botões
 - @app.route('/historico', methods=['GET']) -> Tabela do historico

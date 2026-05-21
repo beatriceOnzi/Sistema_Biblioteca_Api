@@ -6,15 +6,20 @@ module.exports = {
       colors: {
         cnec:{
           amarelo: {
-            DEFAULT: '#ffd32b',
-            escuro:'#d7b120',
+            DEFAULT: '#f5c518',
+            escuro:'#453501',
+            shadow: "#c79d0e",
+            claro: '#f5dd8e'
           },
           azul: {
-            DEFAULT: '#003C9D',
-            claro: '#7c89c2',
-            escuro: "#0e1133"
+            DEFAULT: '#003c9d',
+            claro: {
+              DEFAULT: '#6b7bb8',
+              shadow: "#4F609C"
+            },
+            escuro: "#002054"
           },
-          branco: '#F2F2F0'
+          branco: '#f5f5f2'
         }
       },
       fontFamily: {
@@ -24,4 +29,3 @@ module.exports = {
   },
   plugins: [],
 }
-

@@ -3,20 +3,39 @@
 {% block title %}Biblioteca CNEC{% endblock %}
 
 {% block content %}
-    <div class="flex flex-col items-center justify-center w-full">
-        <div class="justify-start ">
-            <div class=" pb-0 pt-2 px-4 text-2xl bg-cnec-azul text-cnec-branco font-semibold w-max">
-                SELECIONE A TURMA
+<div class="flex justify-center w-full min-h-full items-start pt-12">
+
+    <!-- Container principal -->
+    <div class="relative w-max">
+
+        <!-- Quadrado amarelo -->
+        <div class="absolute -right-14 w-48 h-48 bg-cnec-amarelo z-0"></div>
+
+        <!-- Quadrado azul -->
+        <div class="absolute -bottom-14 -left-14 w-48 h-48 bg-cnec-azul z-0"></div>
+
+        <!-- Conteúdo -->
+        <div class="relative z-10">
+
+            <div class="pt-2 px-4 text-xl text-cnec-azul-escuro border-b-4 border-cnec-amarelo mb-4 font-semibold w-max">
+                Selecione a Turma
             </div>
-            <div class="grid grid-flow-row grid-cols-3 gap-10 bg-cnec-azul h-max w-max p-14">
+            <!-- <img src="/static/assets/logo.png" class="opacity-50 absolute self-baseline"> -->
+
+            <!-- Grid das Turmas-->
+            <div class="grid grid-flow-row grid-cols-3 gap-12 bg-cnec-azul-escuro h-max w-max p-14">
                 {% for turma in turmas %} 
-                    <a href="/turma/{{turma.turma}}" class="text-cnec-azul-escuro bg-cnec-amarelo rounded-sm p-4 px-8 border-4 border-cnec-amarelo-escuro hover:bg-cnec-amarelo-escuro transition-all duration-400 transform hover:scale-105 text-2xl font-bold ">{{ turma.turma_formatada }}</a>
+                    <a href="/turma/{{turma.turma}}"
+                       class="text-cnec-branco bg-cnec-azul-claro rounded-sm p-4 px-8 border-4 border-cnec-azul-claro-shadow hover:bg-cnec-amarelo hover:border-cnec-amarelo-shadow hover:text-cnec-amarelo-escuro transition-all duration-400 transform hover:scale-105 text-xl font-bold">
+                        {{ turma.turma_formatada }}
+                    </a>
                 {% endfor %}
             </div>
+
         </div>
     </div>
+</div>
 {% endblock %}
-
 <!--
     <div class="flex flex-col items-center justify-center h-full w-full bg-cnec-azul-escuro">
         <div class="justify-start">

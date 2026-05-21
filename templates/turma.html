@@ -3,24 +3,31 @@
 {% block title %}Biblioteca CNEC{% endblock %}
 
 {% block content %}
-    <div class="flex flex-col items-center justify-center w-full">
-        <div class="justify-start ">
-            <div class=" pb-0 pt-2 px-4 text-2xl bg-cnec-azul text-cnec-branco font-semibold w-max">
-                Turma - {{turma}}º Ano
-            </div>
-            
 
-            <div class="grid grid-flow-col grid-rows-3 gap-10 bg-cnec-azul h-max w-max p-14">
-                <ul>
-                    {% for aluno in alunos_turma %}
-                        <li class="text-cnec-branco">
-                            {{aluno.nome}}
-                        </li>
-                    {% endfor %}
-                </ul> 
-            </div>
+<div class="flex items-center justify-center w-full">
+
+    <div class="flex flex-col">
+        <div class="px-6 py-3 text-xl font-semibold bg-cnec-azul text-cnec-branco border-b-4 border-cnec-amarelo">
+            {{turma}}º Ano
         </div>
+        <div class="bg-cnec-azul p-10 min-w-[300px]">
+
+            <ul class="flex flex-col gap-3">
+
+                {% for aluno in alunos_turma %}
+                    <li class="px-4 py-2 bg-cnec-azul-escuro text-cnec-branco border-l-4 border-cnec-amarelo
+                               hover:bg-cnec-azul-claro hover:text-cnec-azul-escuro
+                               transition-all duration-200">
+                        {{aluno.nome}}
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
     </div>
 
+</div>
 
 {% endblock %}
