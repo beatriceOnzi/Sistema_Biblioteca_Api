@@ -1,7 +1,7 @@
-<nav class="relative">
-    <div class="flex items-center gap-x-12 justify-between p-2 ps-12 pe-5 w-full text-gray-300 bg-cnec-azul shadow-lg shadow-cnec-azul-claro ">
+<nav class="flex items-center overflow-hidden py-2 px-5 lg:ps-12 w-full h-12 md:h-16 text-gray-300 bg-cnec-azul shadow-lg shadow-cnec-azul-claro justify-between">
+    <div class="flex flex-col md:flex-row md:items-center xl:gap-x-12 lg:gap-x-9 gap-x-7">
 
-        <a href="/" class=" border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 1  %} is_current_page {% endif %}">
+        <a href="/" class="border-b-2 border-transparent transition-all duration-400 transform hover:scale-105 hover:border-cnec-amarelo hover:text-white font-semibold {% if current_page == 1  %} is_current_page {% endif %}">
             TURMAS
         </a>
 
@@ -21,38 +21,17 @@
             PASSAGEM DE ANO
         </a>
 
-        <a href="/" class="ml-auto">
-            <img src="../../static/assets/logo_completa_branca.png" class="h-12 border-l-4 border-cnec-amarelo ">
-        </a>
-
     </div>
-</nav>
 
-<!--    
-<nav class="bg-cnec-azul text-white p-4">
-
-  <div class="flex items-center justify-between">
-    <span class="font-bold">LOGO</span>
-
-botão mobile 
-    <button id="menu-btn" class="sm:hidden text-2xl">
+    <button id="menu-btn" class="md:hidden text-2xl text-cnec-branco">
       ☰
     </button>
 
-    menu desktop 
-    <div class="max-sm:hidden flex gap-6">
-      <a href="#">Turmas</a>
-      <a href="#">Cadastro</a>
-      <a href="#">Histórico</a>
-    </div>
-  </div>
+    <a href="/" class="h-full flex items-center border-l-4 border-cnec-amarelo pl-2">
+        <img 
+            src="../../static/assets/logo_completa_branca.png"
+            class="h-10 lg:h-12 w-auto object-contain"
+        >
+    </a>
 
-   menu mobile
-  <div id="menu"
-       class="hidden flex-col gap-4 mt-4 sm:hidden">
-    <a href="#">Turmas</a>
-    <a href="#">Cadastro</a>
-    <a href="#">Histórico</a>
-  </div>
-
-</nav> -->
+</nav>

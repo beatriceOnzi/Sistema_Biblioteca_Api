@@ -5,28 +5,27 @@
 {% block content %}
 <div class="flex justify-center w-full min-h-full items-start pt-12">
 
-    <!-- Container principal -->
     <div class="relative w-max">
 
         <!-- Quadrado amarelo -->
-        <div class="absolute -right-14 w-48 h-48 bg-cnec-amarelo z-0"></div>
+        <div class="absolute -right-10 md:-right-14 w-32 h-32 md:w-48 md:h-48 bg-cnec-amarelo z-0"></div>
 
         <!-- Quadrado azul -->
-        <div class="absolute -bottom-14 -left-14 w-48 h-48 bg-cnec-azul z-0"></div>
+        <div class="absolute -bottom-10 -left-10 md:-bottom-14 md:-left-14 w-32 h-32 md:w-48 md:h-48 bg-cnec-azul z-0"></div>
 
         <!-- Conteúdo -->
         <div class="relative z-10">
 
-            <div class="pt-2 px-4 text-xl text-cnec-azul-escuro border-b-4 border-cnec-amarelo mb-4 font-semibold w-max">
+            <div class="pt-2 px-0 md:px-4 text-xl text-cnec-azul-escuro border-b-4 border-cnec-amarelo mb-4 font-semibold w-max">
                 Selecione a Turma
             </div>
             <!-- <img src="/static/assets/logo.png" class="opacity-50 absolute self-baseline"> -->
 
             <!-- Grid das Turmas-->
-            <div class="grid grid-flow-row grid-cols-3 gap-12 bg-cnec-azul-escuro h-max w-max p-14">
+            <div class="grid grid-flow-row grid-cols-2 md:grid-cols-3 gap-5 md:gap-12 bg-cnec-azul-escuro h-max w-max p-6 md:p-14 sm:p-10">
                 {% for turma in turmas %} 
                     <a href="/turma/{{turma.turma}}"
-                       class="text-cnec-branco bg-cnec-azul-claro rounded-sm p-4 px-8 border-4 border-cnec-azul-claro-shadow hover:bg-cnec-amarelo hover:border-cnec-amarelo-shadow hover:text-cnec-amarelo-escuro transition-all duration-400 transform hover:scale-105 text-xl font-bold">
+                       class="text-cnec-branco bg-cnec-azul-claro rounded-sm p-2 md:p-4 px-4 md:px-8 border-4 border-cnec-azul-claro-shadow hover:bg-cnec-amarelo hover:border-cnec-amarelo-shadow hover:text-cnec-amarelo-escuro transition-all duration-400 transform hover:scale-105 text-xl font-bold">
                         {{ turma.turma_formatada }}
                     </a>
                 {% endfor %}
@@ -36,17 +35,3 @@
     </div>
 </div>
 {% endblock %}
-<!--
-    <div class="flex flex-col items-center justify-center h-full w-full bg-cnec-azul-escuro">
-        <div class="justify-start">
-            <div class="rounded-t-md p-2 px-4 bg-cnec-azul text-cnec-branco font-bold w-max">
-                SELECIONE A TURMA
-            </div>
-            <div class="grid grid-flow-col grid-rows-3 rounded-md rounded-tl-none gap-5 bg-cnec-azul h-max w-max p-14">
-                {% for turma in turmas %} 
-                    <a href="/turma/{{turma.turma}}" class="text-cnec-azul-escuro bg-cnec-amarelo rounded-md p-2 ">{{ turma.turma_formatada }}</a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
--->

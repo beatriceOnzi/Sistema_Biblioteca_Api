@@ -6,9 +6,12 @@
     <link href="../../static/css/output.css" rel="stylesheet">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body class="bg-cnec-branco font-poppins flex flex-col min-h-screen">    
+
+<body class="font-poppins min-h-screen bg-cnec-branco overflow-x-hidden">
+
     {% include "partials/navbar.html" %}
-    <main class="flex-1 flex">
+
+    <main class="flex min-h-screen w-full overflow-hidden ">
         {% block content %}
         {% endblock %}
     </main>
