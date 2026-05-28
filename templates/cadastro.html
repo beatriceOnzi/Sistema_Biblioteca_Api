@@ -31,7 +31,7 @@
             </a>
         </div>
 
-        <!-- resgistro | formulario -->
+        <!-- registro | formulario -->
         <div class="flex bg-cnec-amarelo {% if grupo == 'alunos' %} bg-cnec-azul-escuro {% endif %} p-6 flex-col md:flex-row gap-8">
 
             {% if grupo == "alunos" %}
@@ -56,7 +56,7 @@
 
                 <!-- formulario -->
                 <div class="w-full md:w-1/2">
-                    <form action="novo" class="flex flex-col gap-6 font-semibold" method="post">
+                    <form action="novo" class="flex flex-col justify-around font-semibold h-full" method="post">
 
                         <legend class="text-cnec-branco text-xl">Novo Aluno:</legend>
                         <div class="flex flex-col gap-2">
@@ -82,8 +82,17 @@
                                 class="bg-cnec-amarelo text-cnec-azul-escuro font-bold py-2 my-3 rounded hover:opacity-90 transition hover:bg-cnec-amarelo-shadow">
                             Cadastrar
                         </button>
-
+                        {% with mensagens = get_flashed_messages(with_categories=true) %}
+                            {% if mensagens %}
+                                {% for categoria, mensagem in mensagens %}
+                                    <div class="{{categoria}} mb-1 rounded-lg p-1 text-center text-cnec-azul-escuro">
+                                        {{mensagem}}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
                     </form>
+                    
                 </div>
 
             {% endif %}
@@ -112,7 +121,7 @@
 
                 <!-- formulario -->
                 <div class="w-full md:w-1/2">
-                    <form action="novo" class="flex flex-col font-semibold" method="post">
+                    <form action="novo" class="flex flex-col justify-center font-semibold h-full" method="post">
 
                         <legend class="text-cnec-azul-escuro text-xl">Novo Livro:</legend>
                         <div class="flex flex-col gap-2">
@@ -128,8 +137,18 @@
                             class="bg-cnec-azul-escuro text-cnec-branco font-bold py-2 mt-4 rounded hover:bg-cnec-amarelo-escuro transition">
                             Cadastrar
                         </button>
+                        {% with mensagens = get_flashed_messages(with_categories=true) %}
+                            {% if mensagens %}
+                                {% for categoria, mensagem in mensagens %}
+                                    <div class="{{categoria}} mt-4 rounded-lg p-2 text-center text-cnec-azul-escuro">
+                                        {{mensagem}}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
 
                     </form>
+                    
                 </div>
 
             {% endif %}

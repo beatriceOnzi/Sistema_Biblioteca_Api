@@ -1,16 +1,30 @@
 from models import db, Livro
 
 def get_livros():
-    livro = Livro.query.order_by(Livro.nome).all()
-    return livro
+    livros = Livro.query.order_by(Livro.nome).all()
+    return livros
 
-def novo_livro(titulo):
+def criar_livro(titulo):
     novo_livro = Livro(nome=titulo)
     db.session.add(novo_livro)
     db.session.commit()
 
-def delete_livro(id):
+def deletar_livro(id):
     livro = db.session.get(Livro, id)
     if livro:
         db.session.delete(livro)
         db.session.commit()
+
+def validar_livro(titulo):
+    erros = []
+
+    if len(titulo) >= 120:
+        erros.append("Digite um título com menos de 120 caracteres")
+    
+    if len(titulo) <= 0:
+        erros.append("Digite o título do livro")
+    
+    print(erros)
+    
+    return erros
+    

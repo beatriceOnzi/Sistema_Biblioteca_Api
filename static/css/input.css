@@ -13,6 +13,13 @@
     --tw-scale-y: 1.05;
 }
 
+.erro {
+  @apply bg-cnec-amarelo-claro
+}
+
+.sucesso {
+  @apply bg-cnec-azul-claro
+}
 
 ::-webkit-scrollbar {
   width: 8px;

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from services.aluno_service import *
 from services.livro_service import *
 
@@ -23,13 +23,23 @@ def carregar_cadastro_alunos():
 def cadastrar_novo_aluno():
     nome_aluno = request.form.get('nome_aluno')
     turma = request.form.get('turma')
-    novo_aluno(nome_aluno, turma)
+
+    erros = validar_aluno(nome_aluno, turma)
+    if (erros):
+        for erro in erros:
+            flash(erro, 'erro')
+        return redirect(url_for('cadastro.carregar_cadastro_alunos'))
+    
+    criar_aluno(nome_aluno, turma)
+    flash("Aluno cadastrado com sucesso!", "sucesso")
     return redirect(url_for('cadastro.carregar_cadastro_alunos'))
 
 
 @bp.route('/alunos/delete/<int:id>', methods=['POST'])
-def deletar_aluno(id):
-    delete_aluno(id)
+def deletar_aluno_registrado(id):
+    deletar_aluno(id)
+    #testar se deletou
+    flash("Aluno deletado com sucesso!", 'sucesso')
     return redirect(url_for('cadastro.carregar_cadastro_alunos'))
 
 # Livros
@@ -41,10 +51,19 @@ def carregar_cadastro_livros():
 @bp.route('/livros/novo', methods=['POST'])
 def cadastrar_novo_livro():
     titulo = request.form.get('titulo')
-    novo_livro(titulo)
+
+    erros = validar_livro(titulo)
+    if (erros):
+        for erro in erros:
+            flash(erro, 'erro')
+        return redirect(url_for('cadastro.carregar_cadastro_livros'))
+    
+    criar_livro(titulo)
+    flash("Livro cadastrado com sucesso!", "sucesso")
     return redirect(url_for('cadastro.carregar_cadastro_livros'))
 
 @bp.route('/livros/delete/<int:id>', methods=['POST'])
-def deletar_livro(id):
-    delete_livro(id)
+def deletar_livro_registrado(id):
+    deletar_livro(id)
+    flash("Livro deletado com sucesso!", "sucesso")
     return redirect(url_for('cadastro.carregar_cadastro_livros'))

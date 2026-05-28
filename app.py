@@ -4,10 +4,10 @@ from models import db
 from routes import registrar_routes
 
 
-def create_app():
+def create_app(config_class=Config):
     app = Flask(__name__, instance_relative_config=True)
 
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
 
     db.init_app(app)
 
