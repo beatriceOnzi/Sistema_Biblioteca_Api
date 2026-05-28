@@ -22,7 +22,7 @@ def validar_livro(titulo):
         erros.append("Digite um título com menos de 120 caracteres")
     
     if len(titulo) <= 0:
-        erros.append("Digite o título do livro")
+        erros.append("Título inválido")
     
     print(erros)
     

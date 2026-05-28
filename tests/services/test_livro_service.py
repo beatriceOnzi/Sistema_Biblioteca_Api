@@ -32,5 +32,5 @@ def test_validar_livro_muitos_caracteres(app):
     assert "Digite um título com menos de 120 caracteres" in erros
 
 def test_validar_livro_poucos_caracteres(app):
-    erros = validar_livro("A")
-    assert "Digite o título do livro" in erros
+    erros = validar_livro("")
+    assert "Título inválido" in erros
