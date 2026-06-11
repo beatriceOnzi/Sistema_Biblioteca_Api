@@ -1,4 +1,4 @@
-from src.services.aluno_service import criar_aluno, deletar_aluno, validar_aluno
+from src.services.aluno_service import criar_aluno, deletar_aluno, validar_aluno, get_aluno_by_nome
 from src.models.aluno import Aluno
 
 
@@ -12,6 +12,17 @@ def test_criar_criar_aluno(app):
 
     assert aluno_teste.nome == "Beatrice teste"
     assert aluno_teste.turma == 3
+
+
+def test_get_aluno_por_nome(app):
+
+    criar_aluno("Beatrice teste", 3)
+
+    aluno_teste = get_aluno_by_nome("Beatrice teste")
+
+    assert aluno_teste.nome == "Beatrice teste"
+    assert aluno_teste.turma == 3
+
 
 def test_deletar_aluno(app):
     criar_aluno("Beatrice teste", 3)

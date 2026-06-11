@@ -4,6 +4,10 @@ def get_alunos():
     alunos = Aluno.query.order_by(Aluno.turma).all()
     return alunos
 
+def get_aluno_by_nome(nome):
+    aluno = Aluno.query.filter_by(nome=nome).first()
+    return aluno
+
 def criar_aluno(nome_aluno, turma):
     novo_aluno = Aluno(nome=nome_aluno, turma=turma)
     db.session.add(novo_aluno)

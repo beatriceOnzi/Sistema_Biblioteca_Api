@@ -32,7 +32,7 @@ def cadastrar_novo_aluno():
     
     criar_aluno(nome_aluno, turma)
     flash("Aluno cadastrado com sucesso!", "sucesso")
-    return redirect(url_for('cadastro.carregar_cadastro_alunos')), 201
+    return redirect(url_for('cadastro.carregar_cadastro_alunos'), 302)
 
 
 @bp.route('/alunos/delete/<int:id>', methods=['POST'])
@@ -60,7 +60,7 @@ def cadastrar_novo_livro():
     
     criar_livro(titulo)
     flash("Livro cadastrado com sucesso!", "sucesso")
-    return redirect(url_for('cadastro.carregar_cadastro_livros')), 201
+    return redirect(url_for('cadastro.carregar_cadastro_livros'), code=302 )
 
 @bp.route('/livros/delete/<int:id>', methods=['POST'])
 def deletar_livro_registrado(id):

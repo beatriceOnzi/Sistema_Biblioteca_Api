@@ -10,7 +10,7 @@ def test_criar_livro_por_status_code(client):
         data={
             "titulo": "Título Teste"
         },
-        follow_redirects=True
+        follow_redirects = False
     )
 
-    assert response.status_code == 201
+    assert response.status_code == 302
